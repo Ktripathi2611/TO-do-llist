@@ -20,7 +20,15 @@ const App = () => {
       console.log(error);
     }
   };
-  
+const DeleteTodo=async(id)=>{
+  try{
+    await axios.delete(`"http://localhost:5000/delete/${id}`)
+    alert("todo delete successsfully")
+    window.location.reload
+  }catch(error){
+    console.log(error)
+  }
+}  
 
   return (
     <div className="h-screen flex flex-col justify-center items-center">
@@ -64,7 +72,7 @@ const App = () => {
             Description
           </div>
           <div className='flex justify-between'>
-            <button className="rounded-md bg-slate-300 hover:bg-slate-600 hover:text-slate-200 duration-300 p-2">
+            <button className="rounded-md bg-slate-300 hover:bg-slate-600 hover:text-slate-200 duration-300 p-2"onClick={()=>delete(value.id)}>
               Delete
             </button>
 
