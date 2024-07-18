@@ -3,6 +3,8 @@ import axios from 'axios';
 
 
 const App = () => {
+  const [newtitle,setnewtitle]=useState()
+  const [newdes, setnewdes]=useState()
   const [title,setTitle]=useState("")
   const [description,setDescription]=useState("")
   const [list,setList]=useState([])
